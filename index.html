@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Space Shooter — Universal Edition</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="game" role="application" aria-label="Space Shooter mini game">
+            <header>
+                <h1>Space Shooter — Mini (Universal)</h1>
+                <div id="ui">
+                    <div class="pill" id="score">Score: 0</div>
+                    <div class="pill" id="level">Level: 1</div>
+                    <div class="pill hp-container">
+                        <span id="hp-text">HP: 100</span>
+                        <div id="hp-bar">
+                            <div id="hp-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <canvas id="c" width="1200" height="700"></canvas>
+
+            <footer>
+                <div class="controls">
+                    <div>Controls: **Arrow keys / WASD** to move, **Mouse** to aim, **Click** to shoot</div>
+                    <div class="small">Mobile: Left side to move, Right side to shoot.</div>
+                </div>
+                <div class="center">
+                    <button id="restart" class="btn">Start / Restart</button>
+                    <div class="small" id="weapon-status">Weapon: Single Shot</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <button id="next-level-btn" class="btn">Next Level >></button>
+
+    <script src="./js/Entities.js"></script>
+    <script src="./js/input.js"></script>
+    <script src="./js/game.js"></script>
+</body>
+
+</html>
