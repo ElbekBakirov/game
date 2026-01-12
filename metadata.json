@@ -1,0 +1,9 @@
+{
+  "name": "PHANTOM X: SINGULAR",
+  "description": "Ultimate Free Fire neuro-engine with VEO Video Generation and Strategic Grounding.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

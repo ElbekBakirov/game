@@ -1,50 +1,71 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHANTOM X | NEURAL ENGINE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --phantom-accent: #3b82f6;
+        --phantom-cyan: #06b6d4;
+        --bg-obsidian: #020617;
+      }
+      body {
+        font-family: 'JetBrains Mono', monospace;
+        background-color: var(--bg-obsidian);
+        color: #f8fafc;
+        overflow-x: hidden;
+      }
+      .font-orbitron { font-family: 'Orbitron', sans-serif; }
+      
+      .phantom-grid {
+        background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.05) 1px, transparent 0);
+        background-size: 32px 32px;
+      }
 
-<head>
-    <meta charset="utf-8" />
-    <title>Space Shooter — Universal Edition</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <link rel="stylesheet" href="./style.css">
+      .glass-v2 {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .btn-primary {
+        background: var(--phantom-accent);
+        color: white;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        transform: translateY(-1px);
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-
-<body>
-    <div class="wrap">
-        <div class="game" role="application" aria-label="Space Shooter mini game">
-            <header>
-                <h1>Space Shooter — Mini (Universal)</h1>
-                <div id="ui">
-                    <div class="pill" id="score">Score: 0</div>
-                    <div class="pill" id="level">Level: 1</div>
-                    <div class="pill hp-container">
-                        <span id="hp-text">HP: 100</span>
-                        <div id="hp-bar">
-                            <div id="hp-fill"></div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <canvas id="c" width="1200" height="700"></canvas>
-
-            <footer>
-                <div class="controls">
-                    <div>Controls: **Arrow keys / WASD** to move, **Mouse** to aim, **Click** to shoot</div>
-                    <div class="small">Mobile: Left side to move, Right side to shoot.</div>
-                </div>
-                <div class="center">
-                    <button id="restart" class="btn">Start / Restart</button>
-                    <div class="small" id="weapon-status">Weapon: Single Shot</div>
-                </div>
-            </footer>
-        </div>
-    </div>
-
-    <button id="next-level-btn" class="btn">Next Level >></button>
-
-    <script src="./js/Entities.js"></script>
-    <script src="./js/input.js"></script>
-    <script src="./js/game.js"></script>
-</body>
-
+  <body class="phantom-grid">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
